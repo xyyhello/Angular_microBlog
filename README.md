@@ -189,5 +189,5 @@ http.listen(3000, function(){   //这里换成了http，因为它增加了一个
 </script>
 此时我们的node.js程序app.js文件，和前端页面index.html都有了一个socket对象。这两个socket已经套接完成
 	
-欢迎[关注个人官网](http://www.josietan.top)
+欢迎[关注个人官网](http://www.xyzmx.cn)
 
