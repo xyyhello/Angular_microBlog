@@ -1,0 +1,36 @@
+<div class="container">
+    <!--发帖框:start-->
+    <div class="row" ng-show="homectrl.getUserInfo().email">
+        <div class="col col-lg-offset-2 col-lg-8">
+            <form action="" name="biaoge">
+                <h4>{{ homectrl.getUserInfo().nickname }} （{{ homectrl.getUserInfo().email }} ）发表说说：</h4>
+                <textarea required name="contentTxt" ng-maxlength="140" class="form-control col col-lg-11" ng-model="homectrl.content"></textarea>
+                <input ng-disabled="biaoge.$invalid" type="button" class="btn btn-success col col-lg-1 submit_btn" value="发表" ng-click="homectrl.fabiao()" >
+            </form>
+        </div>
+    </div>
+    <!--发帖框:end-->
+
+    <div class="alert alert-success" role="alert" ng-show="!homectrl.getUserInfo().email" style="padding:10px 4px;">
+        请登录才能发帖
+    </div>
+    <br>
+    <br>
+
+    <div class="alert alert-success" id="newtip">有<span id="nsn"></span>个说说更新了，点击查看</div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="item in homectrl.allPosts">
+            <a class="home_a" ui-sref="shuoshuo({id:item._id})" target=_blank>
+                <div class="thumbnail">
+                    <div class="caption">
+                        <img class="postAvatar" ng-src="{{item.avatar || '/static/images/defaultAvatar.png'}}" alt="">
+                        <h3>{{ item.nickname || "没有昵称" }} <small>（{{ item.email }}）</small>说：</h3>
+                        <p>{{ item.content }}</p>
+                        <p class="postdate">{{ item.date | date }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

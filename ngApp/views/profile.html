@@ -1,0 +1,60 @@
+<div class="container">
+    <h1>修改个人资料</h1>
+    <hr>
+
+    <form class="col-sm-5 form-horizontal" name="myform">
+        <div class="form-group" style="margin-top:20px;">
+            <label class="col-sm-3 control-label">E-mail</label>
+            <div class="col-sm-9">
+                {{ profilectrl.userinfo.email }}
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:20px;">
+            <label class="col-sm-3 control-label">昵称</label>
+            <div class="col-sm-9">
+                <input type="text" required class="form-control" ng-model="profilectrl.userinfo.nickname" >
+            </div>
+        </div>
+        <div class="form-group" style="margin-top:20px;">
+            <label class="col-sm-3 control-label">头像</label>
+            <div class="col-sm-9">
+                <img ng-src="{{profilectrl.userinfo.avatar}}" />
+
+                <br>
+                <br>
+                <p>更改头像请重新上传：</p>
+
+                <input  type="file" nv-file-select uploader="profilectrl.uploader" ng-disabled="profilectrl.piccropisshow"/>
+                <input class="btn-primary btn" ng-click="profilectrl.uploader.uploadAll()"  type="button" value="上传" ng-show="profilectrl.uploader.queue.length != 0">
+
+                <div class="progress" ng-show="profilectrl.uploader.isUploading">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"   style="width: {{ profilectrl.prog }}%">
+                        <span class="sr-only"> </span>
+                    </div>
+                </div>
+
+                <!--<pic-crop-unit url="{{profilectrl.picurl}}" ng-model="profilectrl.pos"></pic-crop-unit>-->
+
+                <!--组件盒子，这里面放置一个自定义组件pic-crop-unit-->
+                <div id="picbox">
+
+                </div>
+
+                <input class="btn btn-info" type="button" ng-click="profilectrl.cut()" value="裁切" ng-show="profilectrl.piccropisshow">
+            </div>
+
+        </div>
+        <div class="form-group" style="margin-top:20px;">
+            <label class="col-sm-3 control-label" >个人简介</label>
+            <div class="col-sm-9">
+                <input type="text" required class="form-control"  ng-model="profilectrl.userinfo.brief">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-success" ng-click="profilectrl.submit()" ng-disabled="myform.$invalid">提交</button>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,118 @@
+.home_box{
+     width:200px;
+     height:200px;
+     background-color: orange;
+ }
+.alert{
+    padding:5px;
+    margin:5px;
+}
+
+
+.picCropUnitBox{
+    box-sizing: content-box !important;
+    position: relative;
+}
+.picCropUnitBox .piccut{
+    width:100px;
+    height:100px;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index:999;
+    overflow: hidden;
+}
+.picCropUnitBox .mask{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.7);
+
+}
+.picCropUnitBox span.t{
+    position: absolute;
+    top:0;
+    left:0;
+    width:2000px;
+    height:0px;
+    border-top:2px dashed yellow;
+}
+.picCropUnitBox span.b{
+    position: absolute;
+    bottom:0;
+    left:-1000px;
+    width:2000px;
+    height:0px;
+    border-top:2px dashed yellow;
+}
+.picCropUnitBox span.l{
+    position: absolute;
+    left:0;
+    top:-1000px;
+    width:0px;
+    height:2000px;
+    border-left:2px dashed yellow;
+}
+.picCropUnitBox span.r{
+    position: absolute;
+    right:0;
+    top:0px;
+    width:0px;
+    height:2000px;
+    border-left:2px dashed yellow;
+}
+.oringinPic{
+    min-height: 350px;
+    min-width: 600px;
+}
+.header_small_ava{
+    widows:40px;
+    height:40px;
+    position: relative;
+    top:2px;
+}
+textarea{
+    width:91.66666667%  !important;
+    height:120px !important;
+}
+.submit_btn{
+    position: relative;
+    top:90px;
+    left:10px;
+}
+.postAvatar{
+    width:40px;
+    height:40px;
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    margin-top: 6px;
+    border-radius: 50%;
+}
+.caption h3{
+    padding-left:50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.thumbnail{
+    height:200px;
+    overflow: hidden;
+}
+.postdate{
+    position: absolute;
+    bottom:20px;
+    right:20px;
+}
+#newtip{
+    display: none;
+    cursor: pointer;
+}
+#newtip:hover{
+    background-color: orange;
+}
+.home_a:hover{
+    text-decoration: none;
+}
+.home_a:hover>div{
+    background-color: #fff7bf;
+}
